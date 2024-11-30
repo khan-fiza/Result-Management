@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// const API = axios.create({ baseURL: process.env.REACT_APP_SERVER_URL });
+
 const API = axios.create({ baseURL: "http://localhost:9000/" });
 
 API.interceptors.request.use((req) => {
@@ -12,12 +12,12 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
-// Admin
+
 
 export const adminSignIn = async(formData) =>{
   
   return await API.post("/api/admin/login", formData);
-  // console.log("formData");
+
 } 
 
 export const adminUpdatePassword = (updatedPassword) =>
